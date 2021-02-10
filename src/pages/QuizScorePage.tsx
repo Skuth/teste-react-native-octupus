@@ -1,5 +1,10 @@
 import React from "react"
-import { StackActions, useNavigation, useRoute } from "@react-navigation/native"
+import {
+  StackActions,
+  useNavigation,
+  useRoute,
+  RouteProp
+} from "@react-navigation/native"
 import { QuizScoreParams } from "../interfaces"
 
 import Container from "../components/Container"
@@ -15,8 +20,8 @@ import {
 
 const QuizScorePage = () => {
   const navigation = useNavigation()
-  const route = useRoute()
-  const { score, corrects, total } = route.params as QuizScoreParams
+  const route = useRoute<RouteProp<QuizScoreParams, "params">>()
+  const { score, corrects, total } = route.params
 
   const handleBackToHome = () => {
     navigation.dispatch(StackActions.replace("QuizInfoPage"))

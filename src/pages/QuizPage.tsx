@@ -52,7 +52,7 @@ const QuizPage = () => {
       if (timeLeft > 0) {
         setTimeLeft(timeLeft - 1000)
       } else {
-        if (typeof questions.activeOption !== "undefined") {
+        if (questions.activeOption !== null) {
           const awnser = {
             question: questions.activeQuestion,
             option: questions.activeOption
@@ -63,6 +63,7 @@ const QuizPage = () => {
 
         verifyAwnsers()
         dispatch(handleCompleteQuiz())
+        dispatch(handleSelectQuestion(null))
 
         clearInterval(timeLeftInterval)
       }
@@ -115,7 +116,7 @@ const QuizPage = () => {
   }
 
   const handleNextQuestion = () => {
-    if (typeof questions.activeOption !== "undefined") {
+    if (questions.activeOption !== null) {
       const awnser = {
         question: questions.activeQuestion,
         option: questions.activeOption
@@ -125,11 +126,12 @@ const QuizPage = () => {
 
       if (questions.activeQuestion + 1 < questions.questions.length) {
         dispatch(handleActiveQuestion(questions.activeQuestion + 1))
-        dispatch(handleSelectQuestion(null))
       } else {
         verifyAwnsers()
         dispatch(handleCompleteQuiz())
       }
+
+      dispatch(handleSelectQuestion(null))
     }
   }
 
@@ -188,7 +190,7 @@ const QuizPage = () => {
       )}
 
       <QuizButtons>
-        {typeof questions.activeOption !== "undefined" && (
+        {questions.activeOption !== null && (
           <Button
             text={
               questions.activeQuestion + 1 < questions.questions.length

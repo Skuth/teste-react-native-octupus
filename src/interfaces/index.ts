@@ -21,6 +21,27 @@ export interface quizStateInterface {
   quiz: quizInterface
 }
 
+export interface QuizProgressProps {
+  step: number,
+  steps: number
+}
+
+export interface QuizOptionItemProps {
+  active?: boolean
+}
+
+export type QuizScoreParams = {
+  params: {
+    score: string,
+    corrects: string,
+    total: string
+  }
+}
+
+export interface ScoreCircleContainerProps {
+  backgroundColor?: string
+}
+
 export interface ActionInterface {
   type: string,
   option: string,
@@ -38,25 +59,6 @@ export interface ButtonContainerProps {
 
 export interface ButtonTextProps {
   textColor?: string
-}
-
-export interface QuizProgressProps {
-  step: number,
-  steps: number
-}
-
-export interface QuizOptionItemProps {
-  active?: boolean
-}
-
-export interface QuizScoreParams {
-  score: string,
-  corrects: string,
-  total: string
-}
-
-export interface ScoreCircleContainerProps {
-  backgroundColor?: string
 }
 
 export interface ButtonProps {

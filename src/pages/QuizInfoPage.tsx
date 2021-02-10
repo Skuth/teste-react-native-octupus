@@ -27,6 +27,7 @@ const QuizInfoPage = () => {
           assunto. Que tal tentar?
         </Description>
       </QuizContainer>
+
       <ButtonContainer>
         <Button text="Iniciar" action={handleQuizStart} />
       </ButtonContainer>
