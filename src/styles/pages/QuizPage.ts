@@ -1,3 +1,4 @@
+import { Dimensions } from "react-native"
 import styled from "styled-components/native"
 
 import { QuizProgressProps, QuizOptionItemProps } from "../../interfaces"
@@ -55,10 +56,15 @@ export const QuizBody = styled.ScrollView`
 
 export const QuizImage = styled.Image`
   width: 100%;
-  height: 200px;
+  height: ${Math.floor(Dimensions.get("window").width / 2) < 200
+    ? "200px"
+    : Math.floor(Dimensions.get("window").width / 2) > 600
+    ? "600px"
+    : `${Math.floor(Dimensions.get("window").width / 2)}px`};
   margin: 20px auto;
   border-radius: 10px;
   overflow: hidden;
+  flex: 1;
 `
 
 export const QuizQuestion = styled.Text`
