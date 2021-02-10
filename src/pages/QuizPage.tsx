@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { ScrollView } from "react-native"
 import { useSelector, useDispatch } from "react-redux"
+import { StackActions, useNavigation } from "@react-navigation/native"
 
-import { quizInterface } from "../interfaces"
+import { quizInterface, quizStateInterface } from "../interfaces"
 
 import Container from "../components/Container"
 import Button from "../components/Button"
@@ -20,10 +21,20 @@ import {
   QuizOptionItem,
   QuizButtons
 } from "../styles/pages/QuizPage"
-import { StackActions, useNavigation } from "@react-navigation/native"
+
+import {
+  handleSelectQuestion,
+  handleActiveQuestion,
+  handleSetAwnser,
+  handleRemoveLastAwnser,
+  handleCompleteQuiz
+} from "../store/Quiz/Quiz.actions"
 
 const QuizPage = () => {
-  const questions: quizInterface = useSelector((state: quizInterface) => state)
+  const questions: quizInterface = useSelector(
+    (state: quizStateInterface) => state.quiz
+  )
+
   const dispatch = useDispatch()
   const navigation = useNavigation()
 
@@ -76,39 +87,6 @@ const QuizPage = () => {
     }
 
     return `${parsedMinutes}:${parsedSeconds}`
-  }
-
-  const handleSelectQuestion = (option: number | undefined) => {
-    return {
-      type: "SET_ACTIVE_OPTION",
-      option
-    }
-  }
-
-  const handleActiveQuestion = (question: number) => {
-    return {
-      type: "SET_ACTIVE_QUESTION",
-      question
-    }
-  }
-
-  const handleSetAwnser = (awnser: any) => {
-    return {
-      type: "SET_AWNSER",
-      awnser
-    }
-  }
-
-  const handleRemoveLastAwnser = () => {
-    return {
-      type: "REMOVE_AWNSER"
-    }
-  }
-
-  const handleCompleteQuiz = () => {
-    return {
-      type: "COMPLETE_QUIZ"
-    }
   }
 
   const verifyAwnsers = () => {

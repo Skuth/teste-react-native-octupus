@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 
 import Routes from "./src/routes"
 
-import store from "./src/store"
+import store from "./src/store/store"
 
 const App = () => {
   return (

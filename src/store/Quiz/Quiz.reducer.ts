@@ -1,6 +1,4 @@
-import { createStore, Reducer, Store } from "redux"
-
-import { quizInterface, ActionInterface } from "../interfaces"
+import { quizInterface, ActionInterface } from "../../interfaces"
 
 const INITIAL_STATE: quizInterface = {
   activeQuestion: 0,
@@ -415,10 +413,7 @@ const INITIAL_STATE: quizInterface = {
   ]
 }
 
-const reducer: Reducer | any = (
-  state = INITIAL_STATE,
-  action: ActionInterface
-) => {
+export default function (state = INITIAL_STATE, action: ActionInterface) {
   switch (action.type) {
     case "SET_ACTIVE_OPTION":
       return { ...state, activeOption: action.option }
@@ -427,7 +422,6 @@ const reducer: Reducer | any = (
       return { ...state, activeQuestion: action.question }
 
     case "SET_AWNSER":
-      // eslint-disable-next-line no-case-declarations
       const awnsers = state.awnsers
       awnsers.push(action.awnser)
       return {
@@ -453,7 +447,3 @@ const reducer: Reducer | any = (
       return state
   }
 }
-
-const store: Store = createStore(reducer)
-
-export default store

@@ -15,7 +15,11 @@ export interface quizInterface {
       correct: boolean,
     }>
   }>
-} 
+}
+
+export interface quizStateInterface {
+  quiz: quizInterface
+}
 
 export interface ActionInterface {
   type: string,
