@@ -125,7 +125,7 @@ const QuizPage = () => {
 
       if (questions.activeQuestion + 1 < questions.questions.length) {
         dispatch(handleActiveQuestion(questions.activeQuestion + 1))
-        dispatch(handleSelectQuestion(undefined))
+        dispatch(handleSelectQuestion(null))
       } else {
         verifyAwnsers()
         dispatch(handleCompleteQuiz())
@@ -137,7 +137,7 @@ const QuizPage = () => {
     if (questions.questions.length > questions.activeQuestion - 1) {
       dispatch(handleRemoveLastAwnser())
       dispatch(handleActiveQuestion(questions.activeQuestion - 1))
-      dispatch(handleSelectQuestion(undefined))
+      dispatch(handleSelectQuestion(null))
     }
   }
 

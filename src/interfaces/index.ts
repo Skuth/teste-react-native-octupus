@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 export interface quizInterface {
-  activeOption: number | undefined,
+  activeOption: number | null,
   activeQuestion: number,
   timeLimit: number,
   awnsers: Array<{

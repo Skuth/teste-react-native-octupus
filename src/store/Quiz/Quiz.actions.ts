@@ -1,4 +1,4 @@
-export const handleSelectQuestion = (option: number | undefined) => {
+export const handleSelectQuestion = (option: number | null) => {
   return {
     type: "SET_ACTIVE_OPTION",
     option
