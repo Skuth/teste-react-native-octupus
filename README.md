@@ -34,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   ```
 - Instale as dependências:
   ```
-  $ yarn install
+  $ yarn
   ```
 - Inicie o Expo com:
   ```
