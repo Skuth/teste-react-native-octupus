@@ -21,10 +21,10 @@ const QuizInfoPage = () => {
   return (
     <Container>
       <QuizContainer>
-        <Title>Quiz - Geografia</Title>
+        <Title>Quiz</Title>
         <Description>
-          Um pequeno quiz sobre geografia para testar seus conhecimentos sobre o
-          assunto. Que tal tentar?
+          Um pequeno quiz sobre geografia e história para testar seus
+          conhecimentos sobre o assunto. Que tal tentar?
         </Description>
       </QuizContainer>
 
