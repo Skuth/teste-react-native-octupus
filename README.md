@@ -1,10 +1,13 @@
-# Teste React Native Octupus
+<h1 align="center">
+  <img alt="Octupus Quiz Logo" src="./.github/logo.png" width="150">
+</h1>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Skuth/teste-react-native-octupus">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/Skuth/teste-react-native-octupus">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
+
 
 <p align="center">
   <img alt="QuizInfoPage" src="./.github/QuizInfoPage.png" width="200">
