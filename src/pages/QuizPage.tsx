@@ -143,6 +143,14 @@ const QuizPage = () => {
     }
   }
 
+  const handleSetSelectQuestion = (index: number) => {
+    dispatch(handleSelectQuestion(index))
+
+    setTimeout(() => {
+      quizBodyView?.scrollToEnd()
+    }, 300)
+  }
+
   return (
     <Container>
       <QuizHeader>
@@ -179,7 +187,7 @@ const QuizPage = () => {
                 <QuizOptionItem
                   key={index}
                   active={questions.activeOption === index}
-                  onPress={() => dispatch(handleSelectQuestion(index))}
+                  onPress={() => handleSetSelectQuestion(index)}
                 >
                   {question.option}
                 </QuizOptionItem>
