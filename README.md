@@ -10,6 +10,7 @@
 
 
 <p align="center">
+  <img alt="QuizInfoPage" src="./.github/QuizSplash.png" width="200">
   <img alt="QuizInfoPage" src="./.github/QuizInfoPage.png" width="200">
   <img alt="QuizPage" src="./.github/QuizPage.png" width="200">
   <img alt="QuizScorePage" src="./.github/QuizScorePage.png" width="200">
